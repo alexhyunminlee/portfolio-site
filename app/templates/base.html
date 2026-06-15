@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}{{ portfolio.name }} — Portfolio{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}{{ portfolio.tagline }}{% endblock %}" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- HTMX -->
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="/static/css/custom.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: "#6366f1", hover: "#818cf8" }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Nav -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-gray-950/80 backdrop-blur border-b border-gray-800">
+    <nav class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg tracking-tight text-white hover:text-indigo-400 transition-colors">
+        {{ portfolio.name }}
+      </a>
+      <ul class="flex gap-8 text-sm font-medium text-gray-400">
+        <li><a href="/" class="nav-link hover:text-white transition-colors">Home</a></li>
+        <li><a href="/about" class="nav-link hover:text-white transition-colors">About</a></li>
+        <li><a href="/projects" class="nav-link hover:text-white transition-colors">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page content -->
+  <main class="flex-1 pt-16">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-800 py-8 mt-16">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+      <p>&copy; {{ portfolio.name }}. Built with FastAPI + Tailwind.</p>
+      <div class="flex gap-6">
+        {% for key, url in portfolio.social.items() %}
+        {% if url %}
+        <a href="{{ url }}" target="_blank" rel="noopener" class="hover:text-indigo-400 transition-colors capitalize">{{ key }}</a>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </footer>
+
+  <script src="/static/js/interactions.js"></script>
+</body>
+</html>
