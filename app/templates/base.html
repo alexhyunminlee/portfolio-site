@@ -55,12 +55,25 @@
   <footer class="border-t border-gray-800 py-8 mt-16">
     <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
       <p>&copy; {{ portfolio.name }}. Built with FastAPI + Tailwind.</p>
-      <div class="flex gap-6">
-        {% for key, url in portfolio.social.items() %}
-        {% if url %}
-        <a href="{{ url }}" target="_blank" rel="noopener" class="hover:text-indigo-400 transition-colors capitalize">{{ key }}</a>
+      <div class="flex gap-4 items-center">
+        {% if portfolio.social.github %}
+        <a href="{{ portfolio.social.github }}" target="_blank" rel="noopener"
+           class="text-gray-500 hover:text-indigo-400 transition-colors" aria-label="GitHub">
+          {% include 'icons/github.svg' %}
+        </a>
         {% endif %}
-        {% endfor %}
+        {% if portfolio.social.linkedin %}
+        <a href="{{ portfolio.social.linkedin }}" target="_blank" rel="noopener"
+           class="opacity-50 hover:opacity-100 transition-opacity" aria-label="LinkedIn">
+          <img src="/static/images/logos/linkedin_logo.png" alt="" class="w-5 h-5 object-contain" />
+        </a>
+        {% endif %}
+        {% if portfolio.social.email %}
+        <a href="mailto:{{ portfolio.social.email }}"
+           class="text-gray-500 hover:text-indigo-400 transition-colors" aria-label="Email">
+          {% include 'icons/email.svg' %}
+        </a>
+        {% endif %}
       </div>
     </div>
   </footer>

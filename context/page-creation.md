@@ -142,5 +142,12 @@ content/
 
 static/
 ├── css/custom.css
-└── js/interactions.js
+├── js/interactions.js
+└── images/
+    ├── logos/           # All logo/icon assets (see context/assets.md)
+    └── (figures, photos, etc.)
+
+context/
+├── page-creation.md
+└── assets.md            # Image and logo conventions
 ```
