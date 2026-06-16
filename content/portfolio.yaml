@@ -1,14 +1,12 @@
-name: "Alex Rivera"
-tagline: "Data Scientist & Mechanical Engineer — turning messy data into clear decisions."
+name: "Alex Lee"
+tagline: "Enthusiast"
 bio: >
-  I bridge the gap between physical systems and data-driven insight. With a background
-  in mechanical engineering and a passion for machine learning, I build pipelines,
-  models, and tools that help teams understand what their data is actually saying.
+  I enthuse.
 
 social:
-  github: "https://github.com/alexrivera"
-  linkedin: "https://linkedin.com/in/alexrivera"
-  email: "alex@example.com"
+  github: "https://github.com/alexhyunminlee"
+  linkedin: "https://www.linkedin.com/in/alexhyunminlee/"
+  email: "alexhlee5124@gmail.com"
 
 skills:
   - Python
@@ -31,9 +29,9 @@ skills:
   - Linux
 
 experience:
-  - role: "Data Scientist"
-    company: "Acme Manufacturing Co."
-    dates: "2022 – Present"
+  - role: "Junior Data Scientist"
+    company: "Switchbox"
+    dates: "May 2025 – Present"
     bullets:
       - "Built a predictive maintenance model (LSTM) that reduced unplanned downtime by 18%."
       - "Designed and maintained ETL pipelines in Airflow processing 5 M+ sensor records/day."
