@@ -17,14 +17,18 @@ education:
       - "Measure Theory"
       - "Probability Theory"
 
-  - degree: "B.S. Mechanical Engineering"
-    school: "University of Texas at Austin"
-    dates: "Aug 2014 – May 2018"
-    gpa: "3.7 / 4.0"
-    diploma: "/static/documents/diplomas/bs-mechanical-engineering.pdf"
+  - degree: "Bachelor of Science - Computer Science"
+    school: "Purdue University"
+    dates: "Aug 2020 – May 2024"
+    gpa: "3.99 / 4.0"
+    diploma: "/static/documents/diplomas/bs-computer-science.pdf"
     coursework:
-      - "Thermodynamics & Heat Transfer"
-      - "Mechanics of Materials"
-      - "Control Systems"
-      - "Numerical Methods"
-      - "Engineering Data Analysis"
+      - "Machine Learning"
+
+  - degree: "Bachelor of Science Engineering - Civil Engineering"
+    school: "Purdue University"
+    dates: "Aug 2020 – May 2024"
+    gpa: "3.99 / 4.0"
+    diploma: "/static/documents/diplomas/bs-civil-engineering.pdf"
+    coursework:
+      - "Structural Analysis"
