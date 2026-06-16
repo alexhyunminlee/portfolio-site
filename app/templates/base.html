@@ -64,8 +64,8 @@
         {% endif %}
         {% if portfolio.social.linkedin %}
         <a href="{{ portfolio.social.linkedin }}" target="_blank" rel="noopener"
-           class="logo-invert-link" aria-label="LinkedIn">
-          <img src="/static/images/logos/linkedin_logo.png" alt="" class="w-5 h-5 object-contain logo-invert" />
+           class="text-[#0A66C2] opacity-80 hover:opacity-100 transition-opacity" aria-label="LinkedIn">
+          {% include 'icons/linkedin.svg' %}
         </a>
         {% endif %}
         {% if portfolio.social.email %}

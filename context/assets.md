@@ -111,8 +111,6 @@ Optimize images before committing — large uncompressed files slow page load.
 
 | Icon | Source file | Inline icon | Notes |
 |------|-------------|-------------|-------|
-| GitHub | `static/images/logos/github_logo.svg` | `app/templates/icons/github.svg` | Path extracted, `fill="currentColor"` |
-| LinkedIn | `static/images/logos/linkedin_logo.png` | — (PNG, used as `<img>`) | Cannot be inlined; hover uses opacity |
-| Email | `static/images/logos/email_logo.svg` | `app/templates/icons/email.svg` | Path extracted, `fill="currentColor"` |
-
-> If you ever replace `linkedin_logo.png` with an SVG version, move the path into `app/templates/icons/linkedin.svg` and switch the footer back to `{% include 'icons/linkedin.svg' %}` for full CSS color control.
+| GitHub | `static/images/logos/github_logo.svg` | `app/templates/icons/github.svg` | `fill="currentColor"`, styled via `text-white` |
+| LinkedIn | `static/images/logos/linkedin_logo.svg` | `app/templates/icons/linkedin.svg` | Background rect uses `currentColor` (#0A66C2); logo mark hardcoded `fill="#fff"` |
+| Email | `static/images/logos/email_logo.svg` | `app/templates/icons/email.svg` | `fill="currentColor"`, styled via `text-white` |
