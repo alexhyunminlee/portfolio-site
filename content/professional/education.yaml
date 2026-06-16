@@ -1,0 +1,9 @@
+# Education displayed on the About page.
+education:
+  - degree: "M.S. Mechanical Engineering (focus: Data-Driven Dynamics)"
+    school: "University of Texas at Austin"
+    year: "2020"
+
+  - degree: "B.S. Mechanical Engineering"
+    school: "University of Texas at Austin"
+    year: "2018"

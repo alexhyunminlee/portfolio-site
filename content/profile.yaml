@@ -1,0 +1,10 @@
+# Site-wide identity — used across all pages in nav, footer, hero, and meta tags.
+name: "Alex Lee"
+tagline: "Enthusiast"
+bio: >
+  I enthuse.
+
+social:
+  github: "https://github.com/alexhyunminlee"
+  linkedin: "https://www.linkedin.com/in/alexhyunminlee/"
+  email: "alexhlee5124@gmail.com"

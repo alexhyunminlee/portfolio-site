@@ -1,0 +1,33 @@
+# Professional projects displayed on the Projects page.
+projects:
+  - title: "Predictive Maintenance Pipeline"
+    description: >
+      End-to-end ML pipeline that ingests vibration sensor streams, engineers features
+      (RMS, kurtosis, FFT bands), trains an LSTM model, and serves predictions via a
+      REST API — all containerised with Docker Compose.
+    tags: ["Python", "PyTorch", "FastAPI", "Docker"]
+    link: "https://github.com/alexrivera/pred-maintenance"
+
+  - title: "CFD Post-Processor"
+    description: >
+      A Python toolkit for batch-processing OpenFOAM output files: extracts pressure /
+      velocity fields, generates publication-quality plots, and exports summary CSVs.
+      Reduced analysis time from hours to minutes.
+    tags: ["Python", "NumPy", "Matplotlib", "OpenFOAM"]
+    link: "https://github.com/alexrivera/cfd-postprocess"
+
+  - title: "Sensor Dashboard"
+    description: >
+      FastAPI + HTMX real-time dashboard that polls an InfluxDB time-series database
+      and renders live charts without a heavy JS framework. Deployed on a Raspberry Pi
+      in the lab.
+    tags: ["FastAPI", "HTMX", "InfluxDB", "Raspberry Pi"]
+    link: "https://github.com/alexrivera/sensor-dashboard"
+
+  - title: "Portfolio Site"
+    description: >
+      This site — a FastAPI-powered portfolio with Jinja2 templates, Tailwind CSS,
+      Alpine.js micro-interactions, and HTMX for progressive enhancement. Content
+      driven by structured YAML files.
+    tags: ["FastAPI", "Tailwind", "Alpine.js", "HTMX"]
+    link: "https://github.com/alexhyunminlee/portfolio-site"

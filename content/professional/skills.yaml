@@ -1,0 +1,20 @@
+# Technical skills displayed on the Home page.
+skills:
+  - Python
+  - pandas
+  - NumPy
+  - scikit-learn
+  - PyTorch
+  - SQL
+  - dbt
+  - Airflow
+  - FastAPI
+  - Docker
+  - MATLAB
+  - SolidWorks
+  - FEA / FEM
+  - Signal Processing
+  - Time-Series Analysis
+  - Data Visualization (Matplotlib, Plotly)
+  - Git
+  - Linux

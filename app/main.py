@@ -1,4 +1,3 @@
-import yaml
 import uvicorn
 from pathlib import Path
 from fastapi import FastAPI
@@ -7,6 +6,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 
 from app.routers import pages
+from app.content import load_portfolio
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,10 +26,7 @@ async def health_check():
 
 @app.get("/api/fun-facts", response_class=HTMLResponse)
 async def fun_facts():
-    content_path = BASE_DIR / "content" / "portfolio.yaml"
-    with open(content_path, "r") as f:
-        data = yaml.safe_load(f)
-
+    data = load_portfolio()
     facts = data.get("fun_facts", [])
     items = "".join(f"<li class='fun-fact-item'>{fact}</li>" for fact in facts)
     return f"""

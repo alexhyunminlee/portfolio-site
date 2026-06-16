@@ -95,11 +95,28 @@ The active link styling is handled in `static/js/interactions.js` via the `.nav-
 
 ## 5. Content from YAML (optional)
 
-Page copy and structured data live in `content/portfolio.yaml`.
+Page copy and structured data live in the `content/` directory, split by category. All files are merged at request time by `app/content.py` into a single `portfolio` dict — templates access everything the same way regardless of which file the data lives in.
 
-- Add new top-level keys or lists as needed for the page.
-- Access values in templates via the `portfolio` context (e.g. `{{ portfolio.your_key }}`).
-- Keep placeholder/sample data in YAML; avoid hardcoding personal content in templates when it belongs in the content file.
+```
+content/
+├── profile.yaml              # name, tagline, bio, social (site-wide identity)
+├── professional/
+│   ├── skills.yaml
+│   ├── experience.yaml
+│   ├── education.yaml
+│   └── projects.yaml
+└── personal/
+    ├── fun_facts.yaml
+    └── (add more files here as needed)
+```
+
+**Rules:**
+- **Professional content** (work experience, technical skills, academic credentials, professional projects) → `content/professional/`
+- **Personal content** (fun facts, hobbies, personal projects, side interests) → `content/personal/`
+- **Site-wide identity** (name, tagline, bio, social links) → `content/profile.yaml`
+- Each YAML file must use unique top-level keys — files are merged with `dict.update()` so duplicate keys will overwrite each other.
+- Access values in templates via `{{ portfolio.your_key }}` as before.
+- To add content for a new page, add a new key to an existing file or create a new file in the appropriate directory.
 
 ---
 
@@ -121,7 +138,7 @@ For HTMX endpoints that return HTML fragments, follow the pattern in `app/main.p
 - [ ] Template in `app/templates/` extending `base.html`
 - [ ] `{% block title %}Alex H. Lee{% endblock %}`
 - [ ] Nav link in `base.html` (if the page should appear in the header)
-- [ ] YAML updates in `content/portfolio.yaml` (if applicable)
+- [ ] YAML updates in the appropriate `content/` file (professional, personal, or profile)
 - [ ] Manual check: visit the URL, confirm tab title, nav highlight, and mobile layout
 
 ---
@@ -138,7 +155,16 @@ app/
     └── *.html           # One template per page
 
 content/
-└── portfolio.yaml       # Site content
+├── profile.yaml             # Site-wide identity
+├── professional/            # Work, skills, education, projects
+│   ├── skills.yaml
+│   ├── experience.yaml
+│   ├── education.yaml
+│   └── projects.yaml
+└── personal/                # Fun facts, hobbies, personal projects
+    └── fun_facts.yaml
+
+app/content.py               # Merges all content/ YAML files into one dict
 
 static/
 ├── css/custom.css

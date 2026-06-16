@@ -1,0 +1,7 @@
+# Personal fun facts lazy-loaded on the About page via HTMX.
+fun_facts:
+  - "I once built a coffee-roasting controller using a PID loop and a Raspberry Pi."
+  - "I've competed in three collegiate Formula SAE events as the suspension lead."
+  - "I can solve a Rubik's cube in under two minutes — purely muscle memory at this point."
+  - "My first 'data pipeline' was a set of Excel macros that took 20 minutes to run."
+  - "I keep a paper engineering notebook — nothing beats pencil and grid paper for sketching ideas."

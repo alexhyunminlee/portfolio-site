@@ -1,18 +1,13 @@
-import yaml
-from pathlib import Path
 from fastapi import APIRouter, Request
 from fastapi.templating import Jinja2Templates
+from pathlib import Path
+
+from app.content import load_portfolio
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 router = APIRouter()
 templates = Jinja2Templates(directory=BASE_DIR / "app" / "templates")
-
-
-def load_portfolio() -> dict:
-    content_path = BASE_DIR / "content" / "portfolio.yaml"
-    with open(content_path, "r") as f:
-        return yaml.safe_load(f)
 
 
 @router.get("/")
