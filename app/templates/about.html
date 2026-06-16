@@ -34,13 +34,50 @@
   <!-- Education -->
   <section class="mb-20">
     <h2 class="text-2xl font-bold text-white mb-8 pb-3 border-b border-gray-800">Education</h2>
-    <div class="space-y-6">
+    <div class="space-y-10">
       {% for edu in portfolio.education %}
       <div class="grid md:grid-cols-[200px_1fr] gap-4">
-        <div class="text-sm text-gray-500 font-mono pt-0.5">{{ edu.year }}</div>
+        <div class="text-sm text-gray-500 font-mono pt-0.5">{{ edu.dates }}</div>
         <div>
-          <p class="font-semibold text-white">{{ edu.degree }}</p>
-          <p class="text-indigo-400 text-sm">{{ edu.school }}</p>
+          <p class="font-semibold text-white text-lg leading-tight">{{ edu.degree }}</p>
+          <p class="text-indigo-400 text-sm mb-1">{{ edu.school }}</p>
+          <div class="flex items-center gap-4 mb-3">
+            {% if edu.gpa %}
+            <span class="text-gray-500 text-sm">GPA: {{ edu.gpa }}</span>
+            {% endif %}
+            {% if edu.diploma %}
+            <a href="{{ edu.diploma }}" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1.5 text-xs font-medium text-indigo-400 hover:text-indigo-300 border border-indigo-500/30 hover:border-indigo-400 rounded-full px-3 py-0.5 transition-colors">
+              {% include 'icons/diploma.svg' %}
+              Digital Diploma
+            </a>
+            {% endif %}
+          </div>
+          {% if edu.thesis %}
+          <div class="mb-3">
+            <p class="text-xs text-gray-500 uppercase tracking-wider mb-1.5">Thesis</p>
+            <div class="flex items-start gap-2">
+              <span class="text-gray-400 text-sm leading-snug">{{ edu.thesis.title }}</span>
+              {% if edu.thesis.link %}
+              <a href="{{ edu.thesis.link }}" target="_blank" rel="noopener"
+                 class="shrink-0 inline-flex items-center gap-1 text-xs font-medium text-indigo-400 hover:text-indigo-300 border border-indigo-500/30 hover:border-indigo-400 rounded-full px-2.5 py-0.5 transition-colors">
+                {% include 'icons/thesis.svg' %}
+                PDF
+              </a>
+              {% endif %}
+            </div>
+          </div>
+          {% endif %}
+          {% if edu.coursework %}
+          <div>
+            <p class="text-xs text-gray-500 uppercase tracking-wider mb-1.5">Relevant Coursework</p>
+            <ul class="flex flex-wrap gap-2">
+              {% for course in edu.coursework %}
+              <li class="px-2.5 py-0.5 rounded-full bg-gray-800 text-gray-300 text-xs border border-gray-700">{{ course }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
         </div>
       </div>
       {% endfor %}

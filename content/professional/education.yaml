@@ -1,9 +1,28 @@
 # Education displayed on the About page.
 education:
-  - degree: "M.S. Mechanical Engineering (focus: Data-Driven Dynamics)"
+  - degree: "Master of Science - Mechanical Engineering"
     school: "University of Texas at Austin"
-    year: "2020"
+    dates: "Aug 2018 – May 2020"
+    gpa: "3.9 / 4.0"
+    diploma: "/static/documents/diplomas/ms-mechanical-engineering.pdf"
+    thesis:
+      title: "Data-Driven Identification of Nonlinear Thermal Dynamics in Additive Manufacturing"
+      link: "/static/documents/theses/ms-thesis.pdf"
+    coursework:
+      - "Machine Learning for Engineering Applications"
+      - "Data-Driven Dynamical Systems"
+      - "Advanced Finite Element Analysis"
+      - "Computational Fluid Dynamics"
+      - "Statistical Signal Processing"
 
   - degree: "B.S. Mechanical Engineering"
     school: "University of Texas at Austin"
-    year: "2018"
+    dates: "Aug 2014 – May 2018"
+    gpa: "3.7 / 4.0"
+    diploma: "/static/documents/diplomas/bs-mechanical-engineering.pdf"
+    coursework:
+      - "Thermodynamics & Heat Transfer"
+      - "Mechanics of Materials"
+      - "Control Systems"
+      - "Numerical Methods"
+      - "Engineering Data Analysis"

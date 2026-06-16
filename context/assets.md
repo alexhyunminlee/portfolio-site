@@ -68,15 +68,41 @@ These files are served directly by FastAPI's static file mount and referenced wi
 
 ```
 static/
-└── images/
-    ├── logos/          ← third-party brand marks (company logos, tech logos)
-    └── (other images)  ← photos, diagrams, project screenshots
+├── images/
+│   ├── logos/          ← third-party brand marks (company logos, tech logos)
+│   └── (other images)  ← photos, diagrams, project screenshots
+└── documents/
+    ├── diplomas/       ← digital diploma PDFs, one per degree
+    └── theses/         ← thesis / dissertation PDFs, one per degree
 ```
 
 | Folder | What goes here |
 |--------|----------------|
 | `static/images/logos/` | Brand marks used as images — e.g. a company logo in the experience section, a university seal. Not UI icons. |
 | `static/images/` | Everything else: headshots, project screenshots, diagrams. |
+| `static/documents/diplomas/` | Digital diploma PDFs. Linked via the `diploma` field in `content/professional/education.yaml`. |
+| `static/documents/theses/` | Thesis and dissertation PDFs. Linked via the `thesis.link` or `dissertation.link` field in `content/professional/education.yaml`. |
+
+### Adding a diploma
+
+1. Place the PDF in `static/documents/diplomas/` (e.g. `ms-mechanical-engineering.pdf`).
+2. Set the `diploma` field in `content/professional/education.yaml`:
+   ```yaml
+   diploma: "/static/documents/diplomas/ms-mechanical-engineering.pdf"
+   ```
+3. The About page renders a "Digital Diploma" pill link for that entry. Omit the field to hide it.
+
+### Adding a thesis or dissertation
+
+1. Place the PDF in `static/documents/theses/` (e.g. `ms-thesis.pdf`).
+2. Add a `thesis` (or `dissertation`) block to the education entry:
+   ```yaml
+   thesis:
+     title: "Full title of the thesis"
+     link: "/static/documents/theses/ms-thesis.pdf"
+   ```
+   The `link` field is optional — omit it to show just the title with no PDF button.
+3. The About page renders the title inline with a "PDF" pill link. Omit the block entirely to hide the section.
 
 ### How to reference in a template
 
@@ -114,3 +140,5 @@ Optimize images before committing — large uncompressed files slow page load.
 | GitHub | `static/images/logos/github_logo.svg` | `app/templates/icons/github.svg` | `fill="currentColor"`, styled via `text-white` |
 | LinkedIn | `static/images/logos/linkedin_logo.svg` | `app/templates/icons/linkedin.svg` | Single combined path (`fill="currentColor"`); styled via `text-white` like other icons |
 | Email | `static/images/logos/email_logo.svg` | `app/templates/icons/email.svg` | `fill="currentColor"`, styled via `text-white` |
+| Diploma | — | `app/templates/icons/diploma.svg` | UI icon for diploma download link on About page |
+| Thesis | — | `app/templates/icons/thesis.svg` | UI icon for thesis/dissertation PDF link on About page |
