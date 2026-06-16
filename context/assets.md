@@ -81,7 +81,7 @@ static/
 ### How to reference in a template
 
 ```html
-<img src="/static/images/headshot.jpg" alt="Alex H Lee" class="rounded-full w-24 h-24" />
+<img src="/static/images/headshot.jpg" alt="Alex H. Lee" class="rounded-full w-24 h-24" />
 <img src="/static/images/logos/ut-austin.png" alt="UT Austin" class="h-8" />
 ```
 

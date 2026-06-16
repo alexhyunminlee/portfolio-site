@@ -63,3 +63,17 @@ html {
   background-color: rgba(99, 102, 241, 0.2);
   color: #c7d2fe; /* indigo-200 */
 }
+
+/* ============================================================
+   LinkedIn PNG logo — invert black to white on dark background
+   ============================================================ */
+.logo-invert {
+  filter: invert(1);
+  transition: filter 0.2s ease, opacity 0.2s ease;
+  opacity: 0.9;
+}
+
+.logo-invert-link:hover .logo-invert {
+  filter: invert(1) brightness(0.75) sepia(1) saturate(4) hue-rotate(210deg);
+  opacity: 1;
+}

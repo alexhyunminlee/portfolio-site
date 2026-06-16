@@ -6,20 +6,20 @@ Directions for adding or updating pages in this portfolio site. Follow these con
 
 ## 1. Browser tab title
 
-**Every page must use the tab title `Alex H Lee`.**
+**Every page must use the tab title `Alex H. Lee`.**
 
-Do not append page names, suffixes, or dynamic values (e.g. avoid `Alex H Lee — Home` or `About — {{ portfolio.name }}`).
+Do not append page names, suffixes, or dynamic values (e.g. avoid `Alex H. Lee — Home` or `About — {{ portfolio.name }}`).
 
 - **Default:** `app/templates/base.html` sets the fallback:
 
   ```jinja2
-  <title>{% block title %}Alex H Lee{% endblock %}</title>
+  <title>{% block title %}Alex H. Lee{% endblock %}</title>
   ```
 
 - **Per-page override:** Each page template should repeat the same value so the rule stays explicit:
 
   ```jinja2
-  {% block title %}Alex H Lee{% endblock %}
+  {% block title %}Alex H. Lee{% endblock %}
   ```
 
 If you add a new page, include that block even though it matches the default.
@@ -60,7 +60,7 @@ Add `app/templates/your-page.html` that:
 2. **Sets the tab title** (see section 1):
 
    ```jinja2
-   {% block title %}Alex H Lee{% endblock %}
+   {% block title %}Alex H. Lee{% endblock %}
    ```
 
 3. **Optionally overrides meta description:**
@@ -119,7 +119,7 @@ For HTMX endpoints that return HTML fragments, follow the pattern in `app/main.p
 
 - [ ] Route in `app/routers/pages.py`
 - [ ] Template in `app/templates/` extending `base.html`
-- [ ] `{% block title %}Alex H Lee{% endblock %}`
+- [ ] `{% block title %}Alex H. Lee{% endblock %}`
 - [ ] Nav link in `base.html` (if the page should appear in the header)
 - [ ] YAML updates in `content/portfolio.yaml` (if applicable)
 - [ ] Manual check: visit the URL, confirm tab title, nav highlight, and mobile layout
