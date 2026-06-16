@@ -112,5 +112,5 @@ Optimize images before committing — large uncompressed files slow page load.
 | Icon | Source file | Inline icon | Notes |
 |------|-------------|-------------|-------|
 | GitHub | `static/images/logos/github_logo.svg` | `app/templates/icons/github.svg` | `fill="currentColor"`, styled via `text-white` |
-| LinkedIn | `static/images/logos/linkedin_logo.svg` | `app/templates/icons/linkedin.svg` | Background rect uses `currentColor` (#0A66C2); logo mark hardcoded `fill="#fff"` |
+| LinkedIn | `static/images/logos/linkedin_logo.svg` | `app/templates/icons/linkedin.svg` | Single combined path (`fill="currentColor"`); styled via `text-white` like other icons |
 | Email | `static/images/logos/email_logo.svg` | `app/templates/icons/email.svg` | `fill="currentColor"`, styled via `text-white` |
