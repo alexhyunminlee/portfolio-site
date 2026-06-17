@@ -106,45 +106,36 @@
 
         <!-- Modal body (scrollable) -->
         <div class="overflow-y-auto p-6 flex flex-col gap-6">
-
-          <!-- Description -->
           <p class="text-gray-300 text-sm leading-relaxed">{{ project.description }}</p>
 
-          <!-- Highlights -->
           {% if project.highlights %}
           <div>
             <p class="text-xs text-gray-500 uppercase tracking-wider mb-3">Highlights</p>
             <ul class="space-y-2">
               {% for point in project.highlights %}
               <li class="flex gap-2.5 text-sm text-gray-400">
-                <span class="text-indigo-500 mt-0.5 shrink-0">▸</span>
-                {{ point }}
+                <span class="text-indigo-500 mt-0.5 shrink-0">▸</span>{{ point }}
               </li>
               {% endfor %}
             </ul>
           </div>
           {% endif %}
 
-          <!-- Tags -->
           <div>
             <p class="text-xs text-gray-500 uppercase tracking-wider mb-3">Technologies</p>
             <div class="flex flex-wrap gap-2">
               {% for tag in project.tags %}
-              <span class="px-2.5 py-0.5 rounded-full bg-gray-800 text-indigo-300 text-xs font-mono border border-gray-700">
-                {{ tag }}
-              </span>
+              <span class="px-2.5 py-0.5 rounded-full bg-gray-800 text-indigo-300 text-xs font-mono border border-gray-700">{{ tag }}</span>
               {% endfor %}
             </div>
           </div>
 
-          <!-- Link -->
           {% if project.link %}
           <a href="{{ project.link }}" target="_blank" rel="noopener"
              class="self-start inline-flex items-center gap-2 text-sm font-medium text-indigo-400 hover:text-indigo-300 border border-indigo-500/40 hover:border-indigo-400 rounded-lg px-4 py-2 transition-colors">
             View Project →
           </a>
           {% endif %}
-
         </div>
       </div>
     </div>

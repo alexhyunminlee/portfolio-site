@@ -115,6 +115,8 @@ content/
 - **Site-wide identity** (name, tagline, bio, social links) → `content/profile.yaml`
 - Each YAML file must use unique top-level keys — files are merged with `dict.update()` so duplicate keys will overwrite each other.
 - Professional and personal projects use separate keys: `projects` (professional) and `personal_projects` (personal).
+- Each project entry should include a unique `slug` (lowercase kebab-case). Used for deep links: `/projects#project-{slug}`. Slugs must be unique across **all** projects (professional + personal).
+- Experience entries may include an optional `projects` list linking to project slugs (rendered on the About page as pill links that open the project modal). See section 6 for deep-linking details.
 - Access values in templates via `{{ portfolio.your_key }}` as before.
 - To add content for a new page, add a new key to an existing file or create a new file in the appropriate directory.
 
@@ -217,7 +219,7 @@ projects:
   - title: "Predictive Maintenance Pipeline"
     slug: "predictive-maintenance-pipeline"
 ```
-The About page renders these as pill links that navigate to `/projects#project-{slug}`.
+The About page route (`pages.py`) builds a `projects_by_slug` dict from all project YAML data and passes it to the template. The template looks up the full project object by slug and renders a self-contained `x-teleport` modal inline — the same pattern as the Projects page. No API call or network request is made; all content is already available at render time.
 
 ---
 
@@ -266,7 +268,7 @@ This pattern is used for the Digital Diploma button in `about.html` and should b
 
 ```
 app/
-├── main.py              # App setup, static mount, API stubs (e.g. HTMX fragments)
+├── main.py              # App setup, static file mount, health check
 ├── routers/
 │   └── pages.py         # Page routes
 └── templates/

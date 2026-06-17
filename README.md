@@ -8,9 +8,8 @@ A personal portfolio website for a **Data Scientist & Mechanical Engineer**, bui
 |---------|-------------|
 | Server-side rendering | FastAPI + Jinja2 templates |
 | Styling | Tailwind CSS via CDN |
-| Micro-interactions | Alpine.js (skills toggle, project detail expand) |
-| Progressive enhancement | HTMX lazy-loads the "Fun Facts" section |
-| Content management | Edit a single `content/portfolio.yaml` file |
+| Micro-interactions | Alpine.js (skills toggle, project detail modals) |
+| Content management | Edit YAML files in `content/` — no rebuild needed |
 | Deployment | Render (via `render.yaml`) or any Docker host |
 
 ## Local Development
@@ -63,10 +62,12 @@ Just edit the YAML files and refresh the browser — no rebuilding required.
 |----------|-------------|-------------|
 | `name`, `tagline`, `bio`, `social` | `content/profile.yaml` | Home hero, nav, footer |
 | `skills` | `content/professional/skills.yaml` | Home → Skills section |
-| `experience` | `content/professional/experience.yaml` | About page |
+| `experience` | `content/professional/experience.yaml` | About page (optional `projects` list links to project modals) |
 | `education` | `content/professional/education.yaml` | About page |
-| `projects` | `content/professional/projects.yaml` | Projects page (Professional section) |
-| `personal_projects` | `content/personal/projects.yaml` | Projects page (Personal section) |
+| `projects` | `content/professional/projects.yaml` | Projects page (Professional section); each entry needs a unique `slug` |
+| `personal_projects` | `content/personal/projects.yaml` | Projects page (Personal section); each entry needs a unique `slug` |
+
+Deep links to a project modal: `/projects#project-{slug}` (e.g. `/projects#project-predictive-maintenance-pipeline`). See `context/page-creation.md` section 6 for details.
 
 ## Project Structure
 

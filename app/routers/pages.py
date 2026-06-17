@@ -21,8 +21,10 @@ async def index(request: Request):
 @router.get("/about")
 async def about(request: Request):
     data = load_portfolio()
+    all_projects = list(data.get("projects", [])) + list(data.get("personal_projects", []))
+    projects_by_slug = {p["slug"]: p for p in all_projects if "slug" in p}
     return templates.TemplateResponse(
-        "about.html", {"request": request, "portfolio": data}
+        "about.html", {"request": request, "portfolio": data, "projects_by_slug": projects_by_slug}
     )
 
 
