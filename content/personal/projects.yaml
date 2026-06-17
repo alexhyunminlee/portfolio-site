@@ -1,0 +1,24 @@
+# Personal projects displayed on the Projects page.
+personal_projects:
+  - title: "Coffee Roasting Controller"
+    description: >
+      A Raspberry Pi-based PID controller for a home coffee roaster. Monitors bean
+      temperature via thermocouple, adjusts heater output in real time, and logs
+      roast curves for repeatability.
+    tags: ["Raspberry Pi", "Python", "PID Control"]
+    link: ""
+
+  - title: "Formula SAE Suspension Analysis"
+    description: >
+      MATLAB and Python tooling to post-process damper dyno data and lap simulations
+      for a collegiate Formula SAE team. Helped tune spring rates and anti-roll bar
+      settings across three competition seasons.
+    tags: ["MATLAB", "Python", "Vehicle Dynamics"]
+    link: ""
+
+  - title: "Rubik's Cube Timer"
+    description: >
+      A minimal web app for timing solves with scramble generation, session stats,
+      and personal-best tracking. Built as a weekend project to learn Alpine.js.
+    tags: ["JavaScript", "Alpine.js", "HTML"]
+    link: ""

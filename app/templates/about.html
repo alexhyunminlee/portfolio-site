@@ -84,18 +84,6 @@
     </div>
   </section>
 
-  <!-- Fun Facts — HTMX lazy load -->
-  <section>
-    <h2 class="text-2xl font-bold text-white mb-6 pb-3 border-b border-gray-800">Fun Facts</h2>
-    <div
-      hx-get="/api/fun-facts"
-      hx-trigger="revealed"
-      hx-swap="outerHTML"
-      class="text-gray-500 text-sm italic">
-      Loading…
-    </div>
-  </section>
-
 </div>
 
 {% endblock %}

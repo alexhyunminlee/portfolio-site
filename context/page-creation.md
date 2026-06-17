@@ -106,15 +106,15 @@ content/
 │   ├── education.yaml
 │   └── projects.yaml
 └── personal/
-    ├── fun_facts.yaml
-    └── (add more files here as needed)
+    └── projects.yaml
 ```
 
 **Rules:**
 - **Professional content** (work experience, technical skills, academic credentials, professional projects) → `content/professional/`
-- **Personal content** (fun facts, hobbies, personal projects, side interests) → `content/personal/`
+- **Personal content** (personal projects, hobbies, side interests) → `content/personal/`
 - **Site-wide identity** (name, tagline, bio, social links) → `content/profile.yaml`
 - Each YAML file must use unique top-level keys — files are merged with `dict.update()` so duplicate keys will overwrite each other.
+- Professional and personal projects use separate keys: `projects` (professional) and `personal_projects` (personal).
 - Access values in templates via `{{ portfolio.your_key }}` as before.
 - To add content for a new page, add a new key to an existing file or create a new file in the appropriate directory.
 
@@ -127,8 +127,6 @@ content/
 | Toggle panels, local UI state | Alpine.js (`x-data`, `x-show`, `x-transition`) |
 | Lazy-load HTML from the server | HTMX (`hx-get`, `hx-trigger`, etc.) + a route in `app/main.py` or a router |
 | Scroll effects, nav highlighting | `static/js/interactions.js` |
-
-For HTMX endpoints that return HTML fragments, follow the pattern in `app/main.py` (`GET /api/fun-facts`).
 
 ---
 
@@ -161,8 +159,8 @@ content/
 │   ├── experience.yaml
 │   ├── education.yaml
 │   └── projects.yaml
-└── personal/                # Fun facts, hobbies, personal projects
-    └── fun_facts.yaml
+└── personal/                # Personal projects, hobbies
+    └── projects.yaml          # key: personal_projects
 
 app/content.py               # Merges all content/ YAML files into one dict
 

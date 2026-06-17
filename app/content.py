@@ -4,11 +4,11 @@ Content loader — merges all YAML files from content/ into a single dict.
 Load order:
   1. content/profile.yaml           — site-wide identity (name, bio, social)
   2. content/professional/*.yaml    — professional experience, education, projects, skills
-  3. content/personal/*.yaml        — personal projects, fun facts, hobbies, etc.
+  3. content/personal/*.yaml        — personal projects, hobbies, etc.
 
 Each YAML file contributes its top-level keys to the merged dict.
 Templates access everything via the `portfolio` context variable, e.g.
-  {{ portfolio.name }}, {{ portfolio.experience }}, {{ portfolio.projects }}
+  {{ portfolio.name }}, {{ portfolio.experience }}, {{ portfolio.projects }}, {{ portfolio.personal_projects }}
 """
 
 import yaml

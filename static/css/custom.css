@@ -27,32 +27,6 @@ html {
 }
 
 /* ============================================================
-   Fun facts list (rendered by HTMX)
-   ============================================================ */
-.fun-facts-list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.fun-fact-item {
-  display: flex;
-  gap: 0.75rem;
-  color: #9ca3af; /* gray-400 */
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
-
-.fun-fact-item::before {
-  content: "✦";
-  color: #6366f1; /* indigo-500 */
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-/* ============================================================
    Skill tag hover
    ============================================================ */
 .skill-tag {

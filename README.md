@@ -55,38 +55,39 @@ The `--reload` flag restarts the server automatically when you change Python fil
 
 ## Editing Content
 
-**All site content lives in `content/portfolio.yaml`.**
+**All site content lives in the `content/` directory.**
 
-Just edit the YAML and refresh the browser — no rebuilding required.
+Just edit the YAML files and refresh the browser — no rebuilding required.
 
-| YAML key | Rendered on |
-|----------|-------------|
-| `name`, `tagline`, `bio` | Home hero, nav, footer |
-| `skills` | Home → Skills section |
-| `experience` | About page |
-| `education` | About page |
-| `fun_facts` | About page (HTMX lazy-loaded) |
-| `projects` | Projects page |
-| `social` | Footer links |
+| YAML key | Source file | Rendered on |
+|----------|-------------|-------------|
+| `name`, `tagline`, `bio`, `social` | `content/profile.yaml` | Home hero, nav, footer |
+| `skills` | `content/professional/skills.yaml` | Home → Skills section |
+| `experience` | `content/professional/experience.yaml` | About page |
+| `education` | `content/professional/education.yaml` | About page |
+| `projects` | `content/professional/projects.yaml` | Projects page (Professional section) |
+| `personal_projects` | `content/personal/projects.yaml` | Projects page (Personal section) |
 
 ## Project Structure
 
 ```
 portfolio-site/
 ├── app/
-│   ├── main.py              # FastAPI app, health check, /api/fun-facts
+│   ├── main.py              # FastAPI app, health check
 │   ├── routers/
 │   │   └── pages.py         # Route handlers for /, /about, /projects
 │   └── templates/
 │       ├── base.html        # Shared layout + CDN imports
 │       ├── index.html       # Home: hero + Alpine.js skills toggle
-│       ├── about.html       # Experience, education, HTMX fun facts
-│       └── projects.html    # Project cards with Alpine.js expand panels
+│       ├── about.html       # Experience, education
+│       └── projects.html    # Professional + personal project cards
 ├── static/
 │   ├── css/custom.css       # Smooth scroll, card hover lift, transitions
 │   └── js/interactions.js   # Parallax hero, active nav highlighting
 ├── content/
-│   └── portfolio.yaml       # ← Edit this to update all content
+│   ├── profile.yaml
+│   ├── professional/
+│   └── personal/
 ├── requirements.txt
 ├── .env.example
 ├── Dockerfile
