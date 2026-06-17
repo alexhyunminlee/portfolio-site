@@ -4,22 +4,16 @@ experience:
     company: "Switchbox"
     dates: "May 2025 – Present"
     bullets:
-      - "Built a predictive maintenance model (LSTM) that reduced unplanned downtime by 18%."
-      - "Designed and maintained ETL pipelines in Airflow processing 5 M+ sensor records/day."
-      - "Developed an internal FastAPI dashboard for real-time monitoring of production KPIs."
-      - "Collaborated with mechanical engineers to define feature sets from CAD tolerances and vibration data."
+      - "Details"
 
   - role: "Mechanical / Data Engineering Intern"
     company: "Precision Dynamics LLC"
     dates: "2020 – 2022"
     bullets:
-      - "Instrumented test rigs with accelerometers and thermocouples; cleaned and analysed 200 GB of raw logs."
-      - "Automated post-processing workflows in Python, cutting report generation time from 4 h to 15 min."
-      - "Created FEA simulations in ANSYS Mechanical to validate sensor placement assumptions."
+      - "Details"
 
   - role: "Undergraduate Research Assistant"
     company: "University of Texas — Thermal Systems Lab"
     dates: "2018 – 2020"
     bullets:
-      - "Ran CFD simulations comparing heat-exchanger geometries under turbulent flow conditions."
-      - "Wrote data-collection scripts (Python + LabVIEW) for a custom wind-tunnel test bench."
+      - "Details"

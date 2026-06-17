@@ -128,6 +128,65 @@ content/
 | Lazy-load HTML from the server | HTMX (`hx-get`, `hx-trigger`, etc.) + a route in `app/main.py` or a router |
 | Scroll effects, nav highlighting | `static/js/interactions.js` |
 
+### Modals / popups
+
+This site uses **Alpine.js + `x-teleport`** for all popup modals. This is the standard pattern — do not use a separate shared modal with data passed through attributes.
+
+**How it works:**
+
+Each element that needs a popup owns its own `x-data` scope and embeds its modal content directly inside a `<template x-teleport="body">` block:
+
+```html
+<article x-data="{ open: false }">
+
+  <button @click="open = true">Open</button>
+
+  <template x-teleport="body">
+    <div
+      x-show="open"
+      x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="transition ease-in duration-150"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      @keydown.escape.window="open = false"
+      class="fixed inset-0 z-50 flex items-center justify-center p-4"
+      style="display:none">
+
+      <!-- Backdrop -->
+      <div class="absolute inset-0 bg-black/75" @click="open = false"></div>
+
+      <!-- Panel -->
+      <div class="relative ... bg-gray-900 rounded-xl ..." @click.stop>
+        <!-- Jinja2-rendered content goes here — no data passing needed -->
+        <button @click="open = false" aria-label="Close">✕</button>
+        ...
+      </div>
+    </div>
+  </template>
+
+</article>
+```
+
+**Why `x-teleport`:**
+
+- `x-teleport="body"` moves the modal DOM node to `<body>` at runtime, escaping any `overflow: hidden`, stacking context, or z-index issues from ancestor elements.
+- The modal still belongs to the same Alpine.js component scope — `open` works correctly from both the button and the close button inside the modal.
+- All content is rendered by Jinja2 server-side and is already in the HTML. No data-passing gymnastics needed for rich content like lists or formatted text.
+
+**Key details:**
+- `style="display:none"` prevents a flash of the modal before Alpine initializes.
+- `@keydown.escape.window` closes on Escape key.
+- `@click` on the backdrop closes the modal; `@click.stop` on the panel prevents the backdrop click from firing when clicking inside.
+- `z-50` on the modal matches the nav's z-index; since the modal is later in the DOM it renders on top.
+
+**Reference implementations:**
+- `app/templates/projects.html` — project detail modal (one per card, `x-teleport`)
+- `app/templates/about.html` — digital diploma viewer (`x-show` without teleport, since it's a shared modal at section level)
+
+---
+
 ### Passing server-rendered values into Alpine.js event handlers
 
 **Never interpolate Jinja2 values directly inside an `@click` (or any Alpine event) attribute as string literals.** Quote characters in the value will break the HTML attribute and Alpine will silently do nothing.
