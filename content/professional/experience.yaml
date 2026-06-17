@@ -1,16 +1,26 @@
 # Work experience displayed on the About page.
+# `projects` is optional. Each entry references a project slug from
+# content/professional/projects.yaml or content/personal/projects.yaml.
 experience:
   - role: "Junior Data Scientist"
     company: "Switchbox"
     dates: "May 2025 – Present"
     bullets:
       - "Details"
+    projects:
+      - title: "Predictive Maintenance Pipeline"
+        slug: "predictive-maintenance-pipeline"
+      - title: "Sensor Dashboard"
+        slug: "sensor-dashboard"
 
   - role: "Mechanical / Data Engineering Intern"
     company: "Precision Dynamics LLC"
     dates: "2020 – 2022"
     bullets:
       - "Details"
+    projects:
+      - title: "CFD Post-Processor"
+        slug: "cfd-post-processor"
 
   - role: "Undergraduate Research Assistant"
     company: "University of Texas — Thermal Systems Lab"

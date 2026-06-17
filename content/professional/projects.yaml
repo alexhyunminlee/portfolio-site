@@ -1,6 +1,9 @@
 # Professional projects displayed on the Projects page.
+# `slug` must be unique across ALL projects (professional + personal).
+# It is used as the URL anchor: /projects#project-{slug}
 projects:
   - title: "Predictive Maintenance Pipeline"
+    slug: "predictive-maintenance-pipeline"
     dates: "Jan 2024 – Present"
     status: "In Progress"
     description: >
@@ -16,6 +19,7 @@ projects:
     link: "https://github.com/alexhyunminlee/pred-maintenance"
 
   - title: "CFD Post-Processor"
+    slug: "cfd-post-processor"
     dates: "Aug 2023 – Dec 2023"
     status: "Completed"
     description: >
@@ -31,6 +35,7 @@ projects:
     link: "https://github.com/alexhyunminlee/cfd-postprocess"
 
   - title: "Sensor Dashboard"
+    slug: "sensor-dashboard"
     dates: "Mar 2023 – Jul 2023"
     status: "Completed"
     description: >
@@ -46,6 +51,7 @@ projects:
     link: "https://github.com/alexhyunminlee/sensor-dashboard"
 
   - title: "Portfolio Site"
+    slug: "portfolio-site"
     dates: "Jun 2026 – Present"
     status: "In Progress"
     description: >

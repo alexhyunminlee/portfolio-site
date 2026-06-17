@@ -1,6 +1,9 @@
 # Personal projects displayed on the Projects page.
+# `slug` must be unique across ALL projects (professional + personal).
+# It is used as the URL anchor: /projects#project-{slug}
 personal_projects:
   - title: "Coffee Roasting Controller"
+    slug: "coffee-roasting-controller"
     dates: "Sep 2022 – Nov 2022"
     status: "Completed"
     description: >
@@ -16,6 +19,7 @@ personal_projects:
     link: ""
 
   - title: "Formula SAE Suspension Analysis"
+    slug: "formula-sae-suspension"
     dates: "Aug 2021 – May 2024"
     status: "Completed"
     description: >
@@ -31,6 +35,7 @@ personal_projects:
     link: ""
 
   - title: "Rubik's Cube Timer"
+    slug: "rubiks-cube-timer"
     dates: "Jan 2026 – Feb 2026"
     status: "Completed"
     description: >

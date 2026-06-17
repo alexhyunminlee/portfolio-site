@@ -185,6 +185,40 @@ Each element that needs a popup owns its own `x-data` scope and embeds its modal
 - `app/templates/projects.html` — project detail modal (one per card, `x-teleport`)
 - `app/templates/about.html` — digital diploma viewer (`x-show` without teleport, since it's a shared modal at section level)
 
+### Deep-linking to a specific project modal
+
+Every project card has a stable `id="project-{slug}"` and uses `x-init` to auto-open its modal when the page URL hash matches:
+
+```html
+<article
+  id="project-{{ project.slug }}"
+  x-data="{ open: false }"
+  x-init="if (location.hash === '#project-{{ project.slug }}') { $nextTick(() => { open = true }) }">
+```
+
+To link to a specific project from another page (e.g., the About page experience section):
+
+```html
+<a href="/projects#project-predictive-maintenance-pipeline">Predictive Maintenance Pipeline →</a>
+```
+
+When the Projects page loads with that hash, Alpine's `x-init` detects the match and opens the modal via `$nextTick` (which waits for `x-teleport` to finish moving the modal to `<body>` before setting `open = true`).
+
+**Rules for slugs:**
+- Defined as a `slug` field in each project entry in the YAML (`content/professional/projects.yaml`, `content/personal/projects.yaml`).
+- Must be **unique across all projects** (professional + personal) since they share one URL space.
+- Use lowercase kebab-case only (e.g., `predictive-maintenance-pipeline`). No spaces, no special characters.
+- The URL anchor is always `/projects#project-{slug}`.
+
+**Linking from experience entries:**
+Add a `projects` list to an experience entry in `content/professional/experience.yaml`:
+```yaml
+projects:
+  - title: "Predictive Maintenance Pipeline"
+    slug: "predictive-maintenance-pipeline"
+```
+The About page renders these as pill links that navigate to `/projects#project-{slug}`.
+
 ---
 
 ### Passing server-rendered values into Alpine.js event handlers

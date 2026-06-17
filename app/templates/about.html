@@ -20,11 +20,24 @@
         <div>
           <p class="font-semibold text-white text-lg leading-tight">{{ job.role }}</p>
           <p class="text-indigo-400 text-sm mb-3">{{ job.company }}</p>
-          <ul class="space-y-1.5 text-gray-400 text-sm">
+          <ul class="space-y-1.5 text-gray-400 text-sm mb-3">
             {% for bullet in job.bullets %}
             <li class="flex gap-2"><span class="text-indigo-500 mt-0.5">▸</span>{{ bullet }}</li>
             {% endfor %}
           </ul>
+          {% if job.projects %}
+          <div>
+            <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Related Projects</p>
+            <div class="flex flex-wrap gap-2">
+              {% for proj in job.projects %}
+              <a href="/projects#project-{{ proj.slug }}"
+                 class="inline-flex items-center gap-1 text-xs font-medium text-indigo-400 hover:text-indigo-300 border border-indigo-500/30 hover:border-indigo-400 rounded-full px-3 py-1 transition-colors">
+                {{ proj.title }} →
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
         </div>
       </div>
       {% endfor %}
