@@ -128,6 +128,34 @@ content/
 | Lazy-load HTML from the server | HTMX (`hx-get`, `hx-trigger`, etc.) + a route in `app/main.py` or a router |
 | Scroll effects, nav highlighting | `static/js/interactions.js` |
 
+### Passing server-rendered values into Alpine.js event handlers
+
+**Never interpolate Jinja2 values directly inside an `@click` (or any Alpine event) attribute as string literals.** Quote characters in the value will break the HTML attribute and Alpine will silently do nothing.
+
+```html
+<!-- WRONG — breaks if value contains quotes -->
+@click="myVar = '{{ some.value }}'"
+
+<!-- WRONG — tojson wraps in double quotes, collides with the attribute delimiters -->
+@click="myVar = {{ some.value | tojson }}"
+```
+
+**The correct pattern: `data-*` attributes + `$el.dataset`.**
+
+Store the server-rendered value in a `data-*` attribute (Jinja2's auto-escaping makes it safe), then read it in the handler:
+
+```html
+<button
+  data-my-value="{{ some.value }}"
+  @click="myVar = $el.dataset.myValue">
+```
+
+- Jinja2 auto-escaping handles all special characters (quotes, ampersands, etc.) in the HTML attribute.
+- The `@click` expression contains no string literals — just a DOM property read.
+- `data-my-value` is accessed as `$el.dataset.myValue` (camelCase conversion is automatic in the browser).
+
+This pattern is used for the Digital Diploma button in `about.html` and should be the default approach whenever a Jinja2 loop or variable needs to pass a value to an Alpine.js handler.
+
 ---
 
 ## 7. Checklist for a new page

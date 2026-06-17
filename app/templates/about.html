@@ -48,7 +48,9 @@
             {% endif %}
             {% if edu.diploma %}
             <button type="button"
-               @click="diplomaUrl = '{{ edu.diploma }}'; diplomaTitle = {{ edu.degree | tojson }}; diplomaOpen = true"
+               data-diploma-url="{{ edu.diploma }}"
+               data-diploma-title="{{ edu.degree }}"
+               @click="diplomaUrl = $el.dataset.diplomaUrl; diplomaTitle = $el.dataset.diplomaTitle; diplomaOpen = true"
                class="inline-flex items-center gap-1.5 text-xs font-medium text-indigo-400 hover:text-indigo-300 border border-indigo-500/30 hover:border-indigo-400 rounded-full px-3 py-0.5 transition-colors cursor-pointer">
               {% include 'icons/diploma.svg' %}
               Digital Diploma
