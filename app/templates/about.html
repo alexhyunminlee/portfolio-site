@@ -68,12 +68,26 @@
             </div>
           </div>
           {% endif %}
+          {% if edu.skills %}
+          <div class="mb-3">
+            <p class="text-xs text-gray-500 uppercase tracking-wider mb-1.5">Skills</p>
+            <ul class="flex flex-wrap gap-2">
+              {% for skill in edu.skills %}
+              {% if skill %}
+              <li class="px-2.5 py-0.5 rounded-full bg-gray-800 text-gray-300 text-xs border border-gray-700">{{ skill }}</li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
           {% if edu.coursework %}
           <div>
             <p class="text-xs text-gray-500 uppercase tracking-wider mb-1.5">Relevant Coursework</p>
             <ul class="flex flex-wrap gap-2">
               {% for course in edu.coursework %}
+              {% if course %}
               <li class="px-2.5 py-0.5 rounded-full bg-gray-800 text-gray-300 text-xs border border-gray-700">{{ course }}</li>
+              {% endif %}
               {% endfor %}
             </ul>
           </div>
