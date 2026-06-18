@@ -65,3 +65,14 @@ projects:
       - "Deployable to Render or any Docker host via included config files."
     tags: ["FastAPI", "Tailwind", "Alpine.js", "HTMX"]
     link: "https://github.com/alexhyunminlee/portfolio-site"
+
+  - title: "Buildstock Fetch"
+    slug: "buildstock-fetch"
+    dates: "May 2025 – Present"
+    status: "In Progress"
+    description: >
+      Details
+    highlights:
+      - "Details"
+    tags: ["Python", "AWS S3"]
+    link: "https://github.com/switchbox-data/buildstock-fetch"

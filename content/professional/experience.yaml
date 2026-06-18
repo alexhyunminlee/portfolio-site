@@ -8,14 +8,12 @@ experience:
     bullets:
       - "Details"
     projects:
-      - title: "Predictive Maintenance Pipeline"
-        slug: "predictive-maintenance-pipeline"
-      - title: "Sensor Dashboard"
-        slug: "sensor-dashboard"
+      - title: "Buildstock Fetch"
+        slug: "buildstock-fetch"
 
-  - role: "Mechanical / Data Engineering Intern"
+  - role: "Graduate Research Assistant"
     company: "Precision Dynamics LLC"
-    dates: "2020 – 2022"
+    dates: "Aug 2024 – May 2026"
     bullets:
       - "Details"
     projects:
