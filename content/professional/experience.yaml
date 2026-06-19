@@ -4,6 +4,7 @@
 experience:
   - role: "Junior Data Scientist"
     company: "Switchbox"
+    location: "Remote"
     dates: "May 2025 – Present"
     bullets:
       - "Details"
@@ -12,7 +13,8 @@ experience:
         slug: "buildstock-fetch"
 
   - role: "Graduate Research Assistant"
-    company: "Precision Dynamics LLC"
+    company: "Purdue University - Ray W. Herrick Laboratories"
+    location: "West Lafayette, IN"
     dates: "Aug 2024 – May 2026"
     bullets:
       - "Details"
@@ -21,7 +23,22 @@ experience:
         slug: "cfd-post-processor"
 
   - role: "Undergraduate Research Assistant"
-    company: "University of Texas — Thermal Systems Lab"
-    dates: "2018 – 2020"
+    company: "Purdue University - Ray W. Herrick Laboratories"
+    location: "West Lafayette, IN"
+    dates: "May 2023 – Aug 2024"
+    bullets:
+      - "Details"
+
+  - role: "Undergraduate Research Assistant"
+    company: "Purdue University - Ray W. Herrick Laboratories"
+    location: "West Lafayette, IN"
+    dates: "May 2022 – Aug 2022"
+    bullets:
+      - "Details"
+
+  - role: "Data Analyst"
+    company: "One Concern"
+    location: "Menlo Park, CA"
+    dates: "May 2023 – Aug 2024"
     bullets:
       - "Details"
