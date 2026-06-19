@@ -156,8 +156,9 @@ Each element that needs a popup owns its own `x-data` scope and embeds its modal
       class="fixed inset-0 z-50 flex items-center justify-center p-4"
       style="display:none">
 
-      <!-- Backdrop -->
-      <div class="absolute inset-0 bg-black/75" @click="open = false"></div>
+      <!-- Backdrop: bg-black/75 dims the page, backdrop-blur-sm adds a light GPU-accelerated blur.
+           Always use both. backdrop-blur-sm = 4px blur (lightest Tailwind step). -->
+      <div class="absolute inset-0 bg-black/75 backdrop-blur-sm" @click="open = false"></div>
 
       <!-- Panel -->
       <div class="relative ... bg-gray-900 rounded-xl ..." @click.stop>
