@@ -24,7 +24,7 @@
 <body class="bg-cream text-gray-100 font-sans antialiased min-h-screen flex flex-col">
 
   <!-- Nav -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-gray-950/80 backdrop-blur border-b border-gray-800">
+  <header class="fixed top-0 inset-x-0 z-50 bg-band backdrop-blur border-b border-gray-800">
     <nav class="page-px h-16 flex items-center justify-between">
       <a href="/" class="font-bold text-lg tracking-tight text-white hover:text-indigo-400 transition-colors">
         {{ portfolio.name }}
@@ -43,9 +43,9 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 border-t border-gray-700 py-8 mt-16">
+  <footer class="bg-band border-t border-gray-700 py-8 mt-16">
     <div class="page-px flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-400">
-      <p>&copy; {{ portfolio.name }}. Built with FastAPI + Tailwind.</p>
+      <p>&copy; Alex Hyunmin Lee</p>
       <div class="flex gap-4 items-center">
         {% if portfolio.social.github %}
         <a href="{{ portfolio.social.github }}" target="_blank" rel="noopener"
