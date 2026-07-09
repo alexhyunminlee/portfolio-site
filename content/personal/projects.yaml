@@ -2,49 +2,18 @@
 # `slug` must be unique across ALL projects (professional + personal).
 # It is used as the URL anchor: /projects#project-{slug}
 personal_projects:
-  - title: "Coffee Roasting Controller"
-    slug: "coffee-roasting-controller"
-    dates: "Sep 2022 – Nov 2022"
-    status: "Completed"
+  - title: "Portfolio Site"
+    slug: "portfolio-site"
+    dates: "Jun 2026 – Present"
+    status: "In Progress"
     description: >
-      A Raspberry Pi-based PID controller for a home coffee roaster. Monitors bean
-      temperature via thermocouple, adjusts heater output in real time, and logs
-      roast curves for repeatability.
+      This site — a FastAPI-powered portfolio with Jinja2 templates, Tailwind CSS,
+      Alpine.js micro-interactions, and HTMX for progressive enhancement. Content
+      driven by structured YAML files.
     highlights:
-      - "PID loop maintains bean temperature within ±1°C of target profile."
-      - "Thermocouple data sampled at 4 Hz via MAX31855 over SPI."
-      - "Roast curves logged to CSV and plotted post-roast for comparison."
-      - "Simple web UI (Flask) to set target profiles and monitor live temperature."
-    tags: ["Raspberry Pi", "Python", "PID Control"]
-    link: ""
-
-  - title: "Formula SAE Suspension Analysis"
-    slug: "formula-sae-suspension"
-    dates: "Aug 2021 – May 2024"
-    status: "Completed"
-    description: >
-      MATLAB and Python tooling to post-process damper dyno data and lap simulations
-      for a collegiate Formula SAE team. Helped tune spring rates and anti-roll bar
-      settings across three competition seasons.
-    highlights:
-      - "Automated damper dyno data parsing from 3 competition seasons."
-      - "Lap simulation model used to sweep spring rate and ARB stiffness parameters."
-      - "Contributed to a top-10 dynamic events finish at FSAE Michigan 2023."
-      - "Tools adopted by the team and used by the following year's suspension lead."
-    tags: ["MATLAB", "Python", "Vehicle Dynamics"]
-    link: ""
-
-  - title: "Rubik's Cube Timer"
-    slug: "rubiks-cube-timer"
-    dates: "Jan 2026 – Feb 2026"
-    status: "Completed"
-    description: >
-      A minimal web app for timing solves with scramble generation, session stats,
-      and personal-best tracking. Built as a weekend project to learn Alpine.js.
-    highlights:
-      - "Scramble generator produces random-state scrambles using a basic algorithm."
-      - "Session stats: current average, Ao5, Ao12, and all-time best."
-      - "Solve history persisted to localStorage — survives page refreshes."
-      - "Built entirely in vanilla HTML, CSS, and Alpine.js with no build step."
-    tags: ["JavaScript", "Alpine.js", "HTML"]
-    link: ""
+      - "Content fully driven by YAML files — no code changes needed to update copy."
+      - "Server-side rendered with FastAPI and Jinja2; no frontend build step."
+      - "Uses Alpine.js for modals, toggles, and micro-interactions."
+      - "Deployable to Render or any Docker host via included config files."
+    tags: ["FastAPI", "Tailwind", "Alpine.js", "HTMX"]
+    link: "https://github.com/alexhyunminlee/portfolio-site"
