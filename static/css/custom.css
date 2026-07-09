@@ -1,4 +1,19 @@
 /* ============================================================
+   Layout
+   ============================================================ */
+
+/* Change --page-px to control the left/right edge alignment
+   of the header and footer across the entire site. */
+:root {
+  --page-px: 1.5rem; /* 24px — equivalent to Tailwind's px-6 */
+}
+
+.page-px {
+  padding-left: var(--page-px);
+  padding-right: var(--page-px);
+}
+
+/* ============================================================
    Global
    ============================================================ */
 html {
