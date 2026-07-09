@@ -6,6 +6,9 @@ tailwind.config = {
         cream: "#F0EDE5",
         band: "#0C0C00",
       },
+      spacing: {
+        page: "2.5rem",
+      },
     },
   },
 };

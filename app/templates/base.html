@@ -25,7 +25,7 @@
 
   <!-- Nav -->
   <header class="fixed top-0 inset-x-0 z-50 bg-band backdrop-blur border-b border-gray-800">
-    <nav class="h-16 flex items-center justify-between" style="padding-left: var(--page-px); padding-right: var(--page-px);">
+    <nav class="px-page h-16 flex items-center justify-between">
       <a href="/" class="font-bold text-lg tracking-tight text-white hover:text-indigo-400 transition-colors">
         {{ portfolio.name }}
       </a>
@@ -44,7 +44,7 @@
 
   <!-- Footer -->
   <footer class="bg-band border-t border-gray-700 py-8 mt-16">
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-400" style="padding-left: var(--page-px); padding-right: var(--page-px);">
+    <div class="px-page flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-400">
       <p>&copy; Alex Hyunmin Lee</p>
       <div class="flex gap-4 items-center">
         {% if portfolio.social.github %}
